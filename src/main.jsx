@@ -15,6 +15,7 @@ import Contato from './pages/contato/Contato.jsx';
 import Sobre from './pages/sobre/Sobre.jsx';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Layout from './components/layout/Layout.jsx';
 
 const router = createBrowserRouter([
   {
@@ -22,20 +23,25 @@ const router = createBrowserRouter([
     element: <Login />,
   },
   {
-    path: "/home",
-    element: <Home />,
-  },
-  {
-    path: "/post",
-    element: <Post />,
-  },
-  {
-    path: "/contato",
-    element: <Contato />,
-  },
-  {
-    path: "/sobre",
-    element: <Sobre/>
+    element: <Layout/>,
+    children:[
+      {
+        path: "/home",
+        element: <Home />,
+      },
+      {
+        path: "/post",
+        element: <Post />,
+      },
+      {
+        path: "/contato",
+        element: <Contato />,
+      },
+      {
+        path: "/sobre",
+        element: <Sobre/>
+      }
+    ]
   }
   
 ]);

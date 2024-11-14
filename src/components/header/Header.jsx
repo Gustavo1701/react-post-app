@@ -19,7 +19,7 @@ export const Header = () => {
 
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="/cadastro">Post</Nav.Link>
+                            <Nav.Link href="/post">Post</Nav.Link>
                             <Nav.Link href="/sobre">Sobre</Nav.Link>
                             <Nav.Link href="/contato">Contato</Nav.Link>
                         </Nav>
@@ -30,6 +30,7 @@ export const Header = () => {
                             <Row>
                                 <Col xs="auto">
                                     <Form.Control
+                                        size='sm'
                                         type="text"
                                         placeholder="Search"
                                         className=" mr-sm-2"

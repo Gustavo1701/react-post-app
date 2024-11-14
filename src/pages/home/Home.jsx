@@ -1,3 +1,4 @@
+import { Container } from "react-bootstrap";
 import { Footer } from "../../components/footer/Footer";
 import { Header } from "../../components/header/Header";
 import Table from "../../components/table/Table";
@@ -6,9 +7,11 @@ import Table from "../../components/table/Table";
 const Home = () => {
     return (
         <>
-            <Header />
-            <Table />
-            <Footer />
+            <Container>
+                <Table />
+            </Container>
+
+
         </>
     );
 }
