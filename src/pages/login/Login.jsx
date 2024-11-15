@@ -15,7 +15,7 @@ const Login = () => {
         }
 
         if (formValues.email === 'adm' && formValues.senha === '123') {
-            // alert('Login realizado com sucesso.');
+            localStorage.setItem('user', formValues.email);
             navigate('/home');
         } else {
             alert('Login inválido.');

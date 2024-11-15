@@ -2,6 +2,7 @@ import React from 'react'
 import { Button, Col, Container, Form, Nav, Navbar, Row } from 'react-bootstrap'
 import { routes } from '../../routes/Routes'
 import AutoCompleteInput from '../autocompleteInput/AutoCompleteInput'
+import AutoCompletLogout from '../autocompleteInput/AutoCompleteLogout'
 
 export const Header = () => {
     return (
@@ -49,7 +50,8 @@ export const Header = () => {
 
                     <Navbar.Collapse className="justify-content-end">
                         <Navbar.Text>
-                            Signed in as: <a href="#login">Mark Otto</a>
+                            {/* Signed in as: <a href="#login">Mark Otto</a> */}
+                            <AutoCompletLogout/>
                         </Navbar.Text>
                     </Navbar.Collapse>
                 </Container>
