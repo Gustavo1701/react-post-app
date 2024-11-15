@@ -1,5 +1,7 @@
 import React from 'react'
 import { Button, Col, Container, Form, Nav, Navbar, Row } from 'react-bootstrap'
+import { routes } from '../../routes/Routes'
+import AutoCompleteInput from '../autocompleteInput/AutoCompleteInput'
 
 export const Header = () => {
     return (
@@ -29,12 +31,13 @@ export const Header = () => {
                         <Form inline>
                             <Row>
                                 <Col xs="auto">
-                                    <Form.Control
+                                    {/* <Form.Control
                                         size='sm'
                                         type="text"
                                         placeholder="Search"
                                         className=" mr-sm-2"
-                                    />
+                                    /> */}
+                                    <AutoCompleteInput options={routes} />
                                 </Col>
                                 <Col xs="auto">
                                     <Button type="submit">Submit</Button>
