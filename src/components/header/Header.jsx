@@ -1,13 +1,30 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button, Col, Container, Form, Nav, Navbar, Row } from 'react-bootstrap'
 import { routes } from '../../routes/Routes'
 import AutoCompleteInput from '../autocompleteInput/AutoCompleteInput'
 import AutoCompletLogout from '../autocompleteInput/AutoCompleteLogout'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons'
 
 export const Header = () => {
+
+    const [darkMode, setDarkMode] = useState(true);
+
+    const toggleTheme = () => {
+        setDarkMode(!darkMode);
+    }
+
+    useEffect(() => {
+        if (darkMode){
+            document.body.classList.add('dark-theme')
+        } else {
+            document.body.classList.remove('dark-theme')
+        }
+    }, [darkMode])
+
     return (
         <div>
-            <Navbar className="bg-body-tertiary">
+            <Navbar className="bg-body-tertiary mb-3" bg={darkMode ? 'dark' : ''} data-bs-theme={darkMode ? "dark" : " " } >
                 <Container>
                     <Navbar.Brand href="/home">
                         <img
@@ -32,16 +49,10 @@ export const Header = () => {
                         <Form inline>
                             <Row>
                                 <Col xs="auto">
-                                    {/* <Form.Control
-                                        size='sm'
-                                        type="text"
-                                        placeholder="Search"
-                                        className=" mr-sm-2"
-                                    /> */}
                                     <AutoCompleteInput options={routes} />
                                 </Col>
                                 <Col xs="auto">
-                                    <Button type="submit">Submit</Button>
+                                    <FontAwesomeIcon color={darkMode ? '#146ebe' : '#ffd43b'} icon={darkMode ? faMoon : faSun} onClick={toggleTheme} cursor={'pointer'} />
                                 </Col>
                             </Row>
                         </Form>
@@ -51,7 +62,7 @@ export const Header = () => {
                     <Navbar.Collapse className="justify-content-end">
                         <Navbar.Text>
                             {/* Signed in as: <a href="#login">Mark Otto</a> */}
-                            <AutoCompletLogout/>
+                            <AutoCompletLogout />
                         </Navbar.Text>
                     </Navbar.Collapse>
                 </Container>

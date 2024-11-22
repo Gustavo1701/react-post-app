@@ -1,3 +1,8 @@
 #root{
   text-align: center;
 }
+
+.dark-theme {
+  background-color: #343a40;
+  color: #FFFFFF;
+}
